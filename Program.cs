@@ -49,7 +49,7 @@ app.MapGet("/r/{code}", async (string code, IHttpClientFactory httpFactory) =>
         return Results.BadRequest();
 
     var http = httpFactory.CreateClient("TeamLinksApi");
-    var resp = await http.GetAsync($"api/links/ref/{Uri.EscapeDataString(code.Trim())}");
+    var resp = await http.GetAsync($"api/links/ref/{Uri.EscapeDataString(code.Trim())}/redirect");
 
     if (resp.StatusCode == HttpStatusCode.NotFound)
         return Results.NotFound();

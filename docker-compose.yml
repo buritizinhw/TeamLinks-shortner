@@ -7,10 +7,14 @@ services:
       - "${SHORTENER_HOST_PORT:-5006}:8080"
     environment:
       ASPNETCORE_URLS: http://+:8080
-      TeamLinks__BaseUrl: ${TEAMLINKS_API_BASE_URL:-http://host.docker.internal:8080}
+      TeamLinks__BaseUrl: ${TEAMLINKS_API_BASE_URL:-http://teamlinks-api:8080}
       TeamLinks__ProjectId: "${TEAMLINKS_PROJECT_ID:-1}"
       TeamLinks__PublicBaseUrl: ${SHORTENER_PUBLIC_BASE_URL:-http://localhost:5006}
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    networks:
+      - teamlinks-network
     mem_limit: 256m
     cpus: 0.25
+
+networks:
+  teamlinks-network:
+    external: true

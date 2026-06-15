@@ -12,3 +12,5 @@ services:
       TeamLinks__PublicBaseUrl: ${SHORTENER_PUBLIC_BASE_URL:-http://localhost:5006}
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    mem_limit: 256m
+    cpus: 0.25

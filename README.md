@@ -22,7 +22,7 @@ Use o arquivo `.env` ou variáveis no ambiente ao iniciar o Compose:
 |----------|-----------|
 | `TEAMLINKS_API_BASE_URL` | URL base da API TeamLinks (ex.: `http://host.docker.internal:8080`) |
 | `TEAMLINKS_PROJECT_ID` | ID do projeto em que os links são criados |
-| `SHORTENER_PUBLIC_BASE_URL` | URL pública deste serviço — monta o `shortUrl` (ex.: `http://localhost:5006`) |
+| `SHORTENER_PUBLIC_BASE_URL` | URL pública do site — monta o `shortUrl` (ex.: `http://teamlinks.live`, via nginx do frontend) |
 | `SHORTENER_HOST_PORT` | Porta no host para o encurtador (padrão `5006`) |
 
 ## Endpoints
